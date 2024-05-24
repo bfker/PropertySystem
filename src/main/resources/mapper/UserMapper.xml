@@ -1,4 +1,3 @@
-
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
@@ -24,8 +23,17 @@
         SELECT * FROM user WHERE email = #{email}
     </select>
 
+    <select id="selectRolesByUserId" parameterType="int" resultType="string">
+        SELECT r.roleName FROM role r INNER JOIN user_role ur ON r.roleID = ur.roleID WHERE ur.userID = #{userID}
+    </select>
+
+
     <insert id="insertUser" useGeneratedKeys="true" keyProperty="userID" parameterType="propertysys.model.User">
         INSERT INTO user (name, email, password) VALUES (#{name}, #{email}, #{password})
+    </insert>
+
+    <insert id="insertUserRole" parameterType="map">
+        INSERT INTO user_role (userID, roleID) VALUES (#{userID}, #{roleID})
     </insert>
 
     <update id="updateUser" parameterType="propertysys.model.User">
@@ -35,6 +43,11 @@
     <delete id="deleteUser" parameterType="int">
         DELETE FROM user WHERE userID = #{userID}
     </delete>
+
+
+    <select id="login" resultType="propertysys.model.User" parameterType="java.lang.String">
+        select * from user where email=#{email} and password=#{password}
+    </select>
 
 
 </mapper>

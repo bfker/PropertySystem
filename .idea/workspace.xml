@@ -4,7 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="69358e5a-153d-4506-87ee-67878a60eed7" name="更改" comment="" />
+    <list default="true" id="69358e5a-153d-4506-87ee-67878a60eed7" name="更改" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/propertysys/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/propertysys/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/propertysys/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/propertysys/dao/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/propertysys/dao/UserDaoImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/propertysys/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/propertysys/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/propertysys/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/propertysys/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/propertysys/utils/JWTUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/propertysys/utils/JWTUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,6 +32,12 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2gqQx5LpjykfxjYfsHPE8gGeIdr" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -46,6 +63,8 @@
     &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;234298feb8bdf71fbf537818db04fa0b&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -78,10 +97,23 @@
       <option name="presentableId" value="Default" />
       <updated>1716422872064</updated>
       <workItem from="1716422873070" duration="6189000" />
+      <workItem from="1716588400345" duration="4870000" />
+      <workItem from="1716594652318" duration="323000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
