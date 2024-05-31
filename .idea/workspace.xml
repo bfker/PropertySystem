@@ -4,8 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="69358e5a-153d-4506-87ee-67878a60eed7" name="更改" comment="modify user related interfaces">
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+    <list default="true" id="69358e5a-153d-4506-87ee-67878a60eed7" name="更改" comment="fix bugs of jdbc connection">
+      <change afterPath="$PROJECT_DIR$/propertysys-manager/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/propertysys-property/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/propertysys-transaction/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/propertysys-user/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/propertysys/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/propertysys-user/src/main/java/propertysys/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/propertysys/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/propertysys-user/src/main/java/propertysys/dao/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/propertysys/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/propertysys-user/src/main/java/propertysys/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/propertysys/propertysysApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/propertysys-user/src/main/java/propertysys/propertysysApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/propertysys/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/propertysys-user/src/main/java/propertysys/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/propertysys/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/propertysys-user/src/main/java/propertysys/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/propertysys/utils/JWTUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/propertysys-user/src/main/java/propertysys/utils/JWTUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/propertysys/utils/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/propertysys-user/src/main/java/propertysys/utils/Result.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/propertysys/utils/ResultCodeEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/propertysys-user/src/main/java/propertysys/utils/ResultCodeEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/propertysys-user/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/propertysys-user/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,30 +54,46 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;234298feb8bdf71fbf537818db04fa0b&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "17 (2)",
+    "last_opened_file_path": "D:/Coding/mall",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "模块",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "spring.configuration.checksum": "234298feb8bdf71fbf537818db04fa0b",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RunManager">
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Coding\Project_backend\propertysys-user\src\main\resources" />
+      <recent name="D:\Coding\Project_backend\propertysys-user\src\main\java" />
+      <recent name="D:\Coding\Project_backend\propertysys-user\src" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.propertysysApplication (1)">
+    <configuration name="propertysysApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="propertysys-user" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="propertysys.propertysysApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="propertysysApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="Project_backend" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="propertysys.propertysysApplication" />
@@ -89,7 +123,8 @@
       <updated>1716422872064</updated>
       <workItem from="1716422873070" duration="6189000" />
       <workItem from="1716588400345" duration="4870000" />
-      <workItem from="1716594652318" duration="1262000" />
+      <workItem from="1716594652318" duration="2288000" />
+      <workItem from="1717192335983" duration="2345000" />
     </task>
     <task id="LOCAL-00001" summary="modify user related interfaces">
       <created>1716595033531</created>
@@ -98,7 +133,14 @@
       <option name="project" value="LOCAL" />
       <updated>1716595033531</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="fix bugs of jdbc connection">
+      <created>1716596000024</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1716596000024</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -117,6 +159,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="modify user related interfaces" />
-    <option name="LAST_COMMIT_MESSAGE" value="modify user related interfaces" />
+    <MESSAGE value="fix bugs of jdbc connection" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix bugs of jdbc connection" />
   </component>
 </project>
