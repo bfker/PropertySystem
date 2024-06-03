@@ -1,4 +1,4 @@
-package propertysys.utils;
+package com.propertysys.user.utils;
 
 import java.io.Serializable;
 

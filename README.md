@@ -4,213 +4,272 @@
 
 ## 接口文档
 
-### 用户相关接口
+### User相关接口
 
-#### 注册
+#### 1. 注册用户
 
-##### 请求
+- **URL:** `/users/register`
+- **Method:** `POST`
+- **Request Body:**
 
-- **URL**: `/users/register`
+```
+{
+  "name": "John Doe",
+  "email": "john.doe@example.com",
+  "password": "password123",
+  "roles": ["USER"]
+}
+```
 
-- **方法**: `POST`
+- **Response:**
 
-- 请求体
-
-  ```
-  json复制代码{
+```
+{
+  "code": 200,
+  "message": "User registered successfully",
+  "data": {
+    "userID": 1,
     "name": "John Doe",
     "email": "john.doe@example.com",
-    "password": "securepassword123"
-  }
-  ```
+    "roles": ["USER"]
+  },
+  "success": true
+}
+```
 
-##### 响应
+#### 2. 用户登录
 
-- 成功响应
+- **URL:** `/users/login`
+- **Method:** `POST`
+- **Request Body:**
 
-  - **状态码**: `200 OK`
+```
+{
+  "email": "john.doe@example.com",
+  "password": "password123"
+}
+```
 
-  - 响应体
+- **Response:**
 
-    ```
-    {
-      "code": 200,
-      "message": "success"
-    }
-    ```
+```
+{
+  "code": 200,
+  "message": "Login successful",
+  "data": {
+    "token": "jwt_token_here"
+  },
+  "success": true
+}
+```
 
-- 错误响应
+#### 3. 获取所有用户
 
-  - **状态码**: `400 Bad Request`
+- **URL:** `/users/all`
+- **Method:** `GET`
+- **Response:**
 
-  - 响应体
-
-    ```
-    {
-      "code": 400,
-      "message": "fail: <error_message>"
-    }
-    ```
-
-#### 登录
-
-##### 请求
-
-- **URL**: `/users/login`
-
-- **方法**: `POST`
-
-- 请求头
-
-  - `Content-Type: application/json`
-
-- 请求体
-
-  ```
-  {
-    "email": "john.doe@example.com",
-    "password": "securepassword123"
-  }
-  ```
-
-##### 响应
-
-- 成功响应
-
-  - **状态码**: `200 OK`
-
-  - 响应体
-
-    ```
-    {
-      "code": 200,
-      "message": "success"
-    }
-    ```
-
-- 错误响应
-
-  - **状态码**: `401 Unauthorized`
-
-  - 响应体
-
-    ```
-    {
-      "code": 401,
-      "message": "Authorization Failed"
-    }
-    ```
-
-#### 获取所有用户
-
-##### 请求
-
-- **URL**: `/users`
-- **方法**: `GET`
-
-##### 响应
-
-- 成功响应
-
-  - **状态码**: `200 OK`
-
-  - 响应体
-
-    ```
-    [
-      {
-        "userID": 1,
-        "name": "John Doe",
-        "email": "john.doe@example.com",
-        "password": "securepassword123"
-      },
-      ...
-    ]
-    ```
-
-#### 根据ID获取用户
-
-##### 请求
-
-- **URL**: `/users/{userID}`
-- **方法**: `GET`
-- 参数
-  - `userID`: 用户ID
-
-##### 响应
-
-- 成功响应
-
-  - **状态码**: `200 OK`
-
-  - 响应体
-
-    ```
+```
+{
+  "code": 200,
+  "message": "success",
+  "data": [
     {
       "userID": 1,
       "name": "John Doe",
       "email": "john.doe@example.com",
-      "password": "securepassword123"
+      "roles": ["USER"]
+    },
+    {
+      "userID": 2,
+      "name": "Jane Smith",
+      "email": "jane.smith@example.com",
+      "roles": ["ADMIN"]
     }
-    ```
+  ],
+  "success": true
+}
+```
 
-#### 更新用户信息
+#### 4. 根据ID获取用户
 
-##### 请求
+- **URL:** `/users/{userID}`
+- **Method:** `GET`
+- Path Variable:
+  - `userID` (int): 用户ID
+- **Response:**
 
-- **URL**: `users/{userID}`
-
-- **方法**: `PUT`
-
-- 参数
-
-  - `userID`: 用户ID
-
-- 请求体
-
-  ```
-  {
+```
+{
+  "code": 200,
+  "message": "success",
+  "data": {
+    "userID": 1,
     "name": "John Doe",
     "email": "john.doe@example.com",
-    "password": "securepassword123"
-  }
-  ```
+    "roles": ["USER"]
+  },
+  "success": true
+}
+```
 
-##### 响应
+#### 5. 更新用户信息
 
-- 成功响应
+- **URL:** `/users/update`
+- **Method:** `PUT`
+- **Request Body:**
 
-  - **状态码**: `200 OK`
+```
+{
+  "userID": 1,
+  "name": "John Doe",
+  "email": "john.doe@example.com",
+  "password": "newpassword123"
+}
+```
 
-  - 响应体
+- **Response:**
 
-    ```
+```
+{
+  "code": 200,
+  "message": "User updated successfully",
+  "data": {
+    "userID": 1,
+    "name": "John Doe",
+    "email": "john.doe@example.com"
+  },
+  "success": true
+}
+```
+
+#### 6. 删除用户
+
+- **URL:** `/users/delete/{userID}`
+- **Method:** `DELETE`
+- Path Variable:
+  - `userID` (int): 用户ID
+- **Response:**
+
+```
+{
+  "code": 200,
+  "message": "User deleted successfully",
+  "success": true
+}
+```
+
+### Role相关接口
+
+#### 1. 添加角色
+
+- **URL:** `/roles/add`
+- **Method:** `POST`
+- **Request Body:**
+
+```
+{
+  "roleName": "Admin"
+}
+```
+
+- **Response:**
+
+```
+{
+  "code": 200,
+  "message": "success",
+  "data": {
+    "roleID": 1,
+    "roleName": "Admin"
+  },
+  "success": true
+}
+```
+
+#### 2. 获取所有角色
+
+- **URL:** `/roles/all`
+- **Method:** `GET`
+- **Response:**
+
+```
+{
+  "code": 200,
+  "message": "success",
+  "data": [
     {
-      "code": 200,
-      "message": "User updated successfully."
-    }
-    ```
-
-#### 删除用户
-
-##### 请求
-
-- **URL**: `users/{userID}`
-- **方法**: `DELETE`
-- 路径参数
-  - `userID`: 用户ID
-
-##### 响应
-
-- 成功响应
-
-  - **状态码**: `200 OK`
-
-  - 响应体
-
-    ```
+      "roleID": 1,
+      "roleName": "Admin"
+    },
     {
-      "code": 200,
-      "message": "User deleted successfully."
+      "roleID": 2,
+      "roleName": "User"
     }
-    ```
+  ],
+  "success": true
+}
+```
+
+#### 3. 根据ID获取角色
+
+- **URL:** `/roles/{roleID}`
+- **Method:** `GET`
+- Path Variable:
+  - `roleID` (int): 角色ID
+- **Response:**
+
+```
+{
+  "code": 200,
+  "message": "success",
+  "data": {
+    "roleID": 1,
+    "roleName": "Admin"
+  },
+  "success": true
+}
+```
+
+#### 4. 更新角色
+
+- **URL:** `/roles/update`
+- **Method:** `PUT`
+- **Request Body:**
+
+```
+{
+  "roleID": 1,
+  "roleName": "Super Admin"
+}
+```
+
+- **Response:**
+
+```
+{
+  "code": 200,
+  "message": "success",
+  "data": {
+    "roleID": 1,
+    "roleName": "Super Admin"
+  },
+  "success": true
+}
+```
+
+#### 5. 删除角色
+
+- **URL:** `/roles/delete/{roleID}`
+- **Method:** `DELETE`
+- Path Variable:
+  - `roleID` (int): 角色ID
+- **Response:**
+
+```
+{
+  "code": 200,
+  "message": "success",
+  "success": true
+}
+```

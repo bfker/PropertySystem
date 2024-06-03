@@ -1,10 +1,10 @@
-package propertysys.model;
+package com.propertysys.user.model;
 
 import lombok.Data;
 
 @Data
 public class User {
-    private String userID;
+    private int userID;
     private String name;
     private String email;
     private String password;

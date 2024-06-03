@@ -2,9 +2,9 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="propertysys.dao.UserDao">
+<mapper namespace="com.propertysys.user.dao.UserDao">
 
-    <resultMap id="UserMap" type="propertysys.model.User">
+    <resultMap id="UserMap" type="com.propertysys.user.model.User">
         <id property="userID" column="userID"/>
         <result property="name" column="name"/>
         <result property="email" column="email"/>
@@ -28,7 +28,7 @@
     </select>
 
 
-    <insert id="insertUser" useGeneratedKeys="true" keyProperty="userID" parameterType="propertysys.model.User">
+    <insert id="insertUser" useGeneratedKeys="true" keyProperty="userID" parameterType="com.propertysys.user.model.User">
         INSERT INTO user (name, email, password) VALUES (#{name}, #{email}, #{password})
     </insert>
 
@@ -36,16 +36,21 @@
         INSERT INTO user_role (userID, roleID) VALUES (#{userID}, #{roleID})
     </insert>
 
-    <update id="updateUser" parameterType="propertysys.model.User">
+    <update id="updateUser" parameterType="com.propertysys.user.model.User">
         UPDATE user SET name = #{name}, email = #{email}, password = #{password} WHERE userID = #{userID}
     </update>
+
+    <delete id="deleteUserRolesByUserId" parameterType="int">
+        DELETE FROM user_role WHERE userID = #{userID}
+    </delete>
+
 
     <delete id="deleteUser" parameterType="int">
         DELETE FROM user WHERE userID = #{userID}
     </delete>
 
 
-    <select id="login" resultType="propertysys.model.User" parameterType="java.lang.String">
+    <select id="login" resultType="com.propertysys.user.model.User" parameterType="java.lang.String">
         select * from user where email=#{email} and password=#{password}
     </select>
 

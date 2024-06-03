@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.propertysys.user.dao.RoleDao">
+
+    <resultMap id="RoleMap" type="com.propertysys.user.model.Role">
+        <id property="roleID" column="roleID"/>
+        <result property="roleName" column="roleName"/>
+    </resultMap>
+
+    <select id="selectRoleById" parameterType="int" resultMap="RoleMap">
+        SELECT * FROM role WHERE roleID = #{roleID}
+    </select>
+
+    <select id="selectRoleByName" parameterType="java.lang.String" resultMap="RoleMap">
+        SELECT * FROM role WHERE roleName = #{roleName}
+    </select>
+
+    <select id="selectAllRoles" resultMap="RoleMap">
+        SELECT * FROM role
+    </select>
+
+    <insert id="insertRole" useGeneratedKeys="true" keyProperty="roleID" parameterType="com.propertysys.user.model.Role">
+        INSERT INTO role (roleName) VALUES (#{roleName})
+    </insert>
+
+    <update id="updateRole" parameterType="com.propertysys.user.model.Role">
+        UPDATE role SET roleName = #{roleName} WHERE roleID = #{roleID}
+    </update>
+
+    <delete id="deleteRole" parameterType="int">
+        DELETE FROM role WHERE roleID = #{roleID}
+    </delete>
+</mapper>

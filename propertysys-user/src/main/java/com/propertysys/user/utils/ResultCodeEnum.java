@@ -1,4 +1,4 @@
-package propertysys.utils;
+package com.propertysys.user.utils;
 
 public enum ResultCodeEnum {
     SUCCESS(200, "success"),

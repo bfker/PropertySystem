@@ -1,11 +1,11 @@
-package propertysys;
+package com.propertysys.user;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class propertysysApplication {
+public class userApplication {
     public static void main(String[] args) {
-        SpringApplication.run(propertysysApplication.class,args);
+        SpringApplication.run(userApplication.class,args);
     }
 }
