@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.propertysys.property.dao.PropertyDao">
+
+    <insert id="addProperty" parameterType="com.propertysys.property.model.Property" useGeneratedKeys="true" keyProperty="propertyID">
+        INSERT INTO property (userID, locationID, title, price, description, type, size)
+        VALUES (#{userID}, #{locationID}, #{title}, #{price}, #{description}, #{type}, #{size})
+    </insert>
+
+    <select id="getPropertyList" parameterType="int" resultType="com.propertysys.property.model.Property">
+        SELECT * FROM property WHERE userID = #{userID}
+    </select>
+
+    <select id="getPropertyById" parameterType="int" resultType="com.propertysys.property.model.Property">
+        SELECT * FROM property WHERE propertyID = #{propertyID}
+    </select>
+
+    <update id="updateProperty" parameterType="com.propertysys.property.model.Property">
+        UPDATE property SET
+                            title = #{title},
+                            price = #{price},
+                            description = #{description},
+                            type = #{type},
+                            size = #{size}
+        WHERE propertyID = #{propertyID} AND userID = #{userID}
+    </update>
+
+    <delete id="deleteProperty" parameterType="map">
+        DELETE FROM property WHERE propertyID = #{propertyID} AND userID = #{userID}
+    </delete>
+
+    <insert id="addMedia" parameterType="com.propertysys.property.model.Media">
+        INSERT INTO media (propertyID, type, url) VALUES (#{propertyID}, #{type}, #{url})
+    </insert>
+
+    <select id="getMediaByPropertyId" parameterType="int" resultType="com.propertysys.property.model.Media">
+        SELECT * FROM media WHERE propertyID = #{propertyID}
+    </select>
+
+    <delete id="deleteMediaByPropertyId" parameterType="int">
+        DELETE FROM media WHERE propertyID = #{propertyID}
+    </delete>
+
+    <insert id="addInterest" parameterType="map">
+        INSERT INTO interest (userID, propertyID, status) VALUES (#{userID}, #{propertyID}, 'interest')
+    </insert>
+
+    <select id="getInterestedProperties" parameterType="int" resultType="com.propertysys.property.model.Property">
+        SELECT p.* FROM property p INNER JOIN interest i ON p.propertyID = i.propertyID WHERE i.userID = #{userID} AND i.status = 'interest'
+    </select>
+
+    <delete id="removeInterest" parameterType="map">
+        DELETE FROM interest WHERE userID = #{userID} AND propertyID = #{propertyID} AND status = 'interest'
+    </delete>
+</mapper>

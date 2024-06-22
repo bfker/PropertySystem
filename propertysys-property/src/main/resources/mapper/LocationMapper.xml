@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.propertysys.property.dao.LocationDao">
+
+    <insert id="addLocation" parameterType="com.propertysys.property.model.Location" useGeneratedKeys="true" keyProperty="locationID">
+        INSERT INTO location (street, postalCode, latitude, longitude)
+        VALUES (#{street}, #{postalCode}, #{latitude}, #{longitude})
+    </insert>
+
+    <select id="getLocationById" parameterType="int" resultType="com.propertysys.property.model.Location">
+        SELECT * FROM location WHERE locationID = #{locationID}
+    </select>
+
+</mapper>

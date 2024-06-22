@@ -3,11 +3,11 @@ package com.propertysys.user.model;
 import lombok.Data;
 
 @Data
-public class User {
-    private int userID;
+public class UserRegisterRequest {
     private String name;
     private String email;
     private String password;
-    private String profile;
-    private String phone;
+    private int roleID;
+
+    public UserRegisterRequest() {}
 }

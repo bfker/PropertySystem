@@ -14,15 +14,13 @@ public class UserServiceImpl implements UserService {
     @Autowired(required = false)
     UserDao userDao;
     @Override
-    public User registerService(User user) {
+    public User registerService(User user, int roleID) {
         User userTmp = userDao.selectUserByEmail(user.getEmail());
         if(userTmp != null) {
             return null;
         }
         else {
             userDao.insertUser(user);
-            //TODO: user_role注册的逻辑
-            int roleID = 1; // Assuming roleID for 'ROLE_USER' is 1
             userDao.insertUserRole(user.getUserID(), roleID);
             return user;
         }
@@ -33,8 +31,18 @@ public class UserServiceImpl implements UserService {
         return userDao.login(email, password);
     }
 
+    @Override
+    public User getUserInfo(int userID) {
+        return userDao.getUserInfo(userID);
+    }
+
     public List<User> getAllUsers() {
         return userDao.selectAllUsers();
+    }
+
+    @Override
+    public List<String> selectRolesByUserId(int userID) {
+        return userDao.selectRolesByUserId(userID);
     }
 
     @Override

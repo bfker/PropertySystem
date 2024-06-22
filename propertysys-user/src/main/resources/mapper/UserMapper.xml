@@ -9,6 +9,8 @@
         <result property="name" column="name"/>
         <result property="email" column="email"/>
         <result property="password" column="password"/>
+        <result property="profile" column="profile"/>
+        <result property="phone" column="phone"/>
     </resultMap>
 
     <select id="selectAllUsers" resultMap="UserMap">
@@ -17,6 +19,10 @@
 
     <select id="selectUserById" parameterType="int" resultMap="UserMap">
         SELECT * FROM user WHERE userID = #{userID}
+    </select>
+
+    <select id="getUserInfo" parameterType="int" resultMap="UserMap">
+        SELECT userID, name, email, profile, phone FROM user WHERE userID = #{userID}
     </select>
 
     <select id="selectUserByEmail" parameterType="java.lang.String" resultMap="UserMap">
@@ -37,8 +43,9 @@
     </insert>
 
     <update id="updateUser" parameterType="com.propertysys.user.model.User">
-        UPDATE user SET name = #{name}, email = #{email}, password = #{password} WHERE userID = #{userID}
+        UPDATE user SET name = #{name}, email = #{email}, password = #{password}, profile = #{profile}, phone = #{phone} WHERE userID = #{userID}
     </update>
+
 
     <delete id="deleteUserRolesByUserId" parameterType="int">
         DELETE FROM user_role WHERE userID = #{userID}

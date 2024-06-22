@@ -39,7 +39,7 @@ public class UserServiceTest {
         newUser.setEmail("test@example.com");
         newUser.setPassword("password");
 
-        User result = userService.registerService(newUser);
+        User result = userService.registerService(newUser,1);
         assertNull(result);
         verify(userDao, never()).insertUser(any(User.class));
     }
@@ -52,7 +52,7 @@ public class UserServiceTest {
         newUser.setEmail("test@example.com");
         newUser.setPassword("password");
 
-        userService.registerService(newUser);
+        userService.registerService(newUser,1);
         verify(userDao).insertUser(newUser);
         verify(userDao).insertUserRole(newUser.getUserID(), 1);
     }

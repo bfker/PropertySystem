@@ -1,6 +1,7 @@
 package com.propertysys.user.controller;
 
 import com.propertysys.user.model.User;
+import com.propertysys.user.model.UserRegisterRequest;
 import com.propertysys.user.service.UserService;
 import com.propertysys.user.utils.JWTUtils;
 import com.propertysys.user.utils.Result;
@@ -18,9 +19,13 @@ public class UserController {
     @Autowired
     UserService userService;
     @RequestMapping("/register") //  /user/register/
-    public Result<User> register(@RequestBody User user) // json 传参
+    public Result<User> register(@RequestBody UserRegisterRequest request) // json 传参
     {
-        if(userService.registerService(user) != null) {
+        User user = new User();
+        user.setName(request.getName());
+        user.setEmail(request.getEmail());
+        user.setPassword(request.getPassword());
+        if(userService.registerService(user,request.getRoleID()) != null) {
             return Result.success(user);
         }
         else {
@@ -38,9 +43,11 @@ public class UserController {
        }
        else {
            String token = JWTUtils.getToken(String.valueOf(userFromJDBC.getUserID()), userFromJDBC.getEmail());
-           Map<String, String> userMap = new HashMap<>();
+           List<String> roles = userService.selectRolesByUserId(userFromJDBC.getUserID());
+           Map<String, Object> userMap = new HashMap<>();
            userMap.put("userID", String.valueOf(userFromJDBC.getUserID()));
            userMap.put("email", userFromJDBC.getEmail());
+           userMap.put("roles", roles);
            userMap.put("token", token);
            return Result.success(userMap);
 
@@ -63,9 +70,19 @@ public class UserController {
         }
     }
 
-    @PutMapping("/update/{userID}")
-    public Result<User> updateUser(@PathVariable("userID") int userID, @RequestBody User user) {
-        user.setUserID(userID);
+    @GetMapping("/userInfo/{userID}")
+    public Result<User> getUserPersonalInfo(@PathVariable("userID") int userID) {
+        User user = userService.getUserInfo(userID);
+        if (user != null) {
+            return Result.success(user);
+        } else {
+            return Result.failure(ResultCodeEnum.NOT_FOUND);
+        }
+    }
+
+
+    @PostMapping("/update")
+    public Result<User> updateUser(@RequestBody User user) {
         userService.updateUser(user);
         return Result.success(user);
     }
@@ -79,5 +96,12 @@ public class UserController {
             return Result.failure(ResultCodeEnum.NOT_FOUND);
         }
     }
+
+
+    @PostMapping("/logout/{userID}")
+    public Result<Void> logout(@PathVariable("userID") int userID) {
+        return Result.success();
+    }
+
 }
 

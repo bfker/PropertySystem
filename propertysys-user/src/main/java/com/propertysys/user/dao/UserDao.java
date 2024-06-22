@@ -20,6 +20,8 @@ public interface UserDao {
 
     User selectUserByEmail(String email);
 
+    User getUserInfo(int userID);
+
     List<String> selectRolesByUserId(int userID);
 
     List<User> selectAllUsers();
