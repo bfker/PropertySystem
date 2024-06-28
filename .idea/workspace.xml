@@ -4,36 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="69358e5a-153d-4506-87ee-67878a60eed7" name="更改" comment="modify unit test of role and user module">
-      <change afterPath="$PROJECT_DIR$/propertysys-property/src/main/java/com/propertysys/property/controller/PropertyController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/propertysys-property/src/main/java/com/propertysys/property/dao/LocationDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/propertysys-property/src/main/java/com/propertysys/property/dao/PropertyDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/propertysys-property/src/main/java/com/propertysys/property/model/Interest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/propertysys-property/src/main/java/com/propertysys/property/model/Location.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/propertysys-property/src/main/java/com/propertysys/property/model/Media.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/propertysys-property/src/main/java/com/propertysys/property/model/Property.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/propertysys-property/src/main/java/com/propertysys/property/propertyApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/propertysys-property/src/main/java/com/propertysys/property/service/LocationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/propertysys-property/src/main/java/com/propertysys/property/service/PropertyService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/propertysys-property/src/main/java/com/propertysys/property/service/impl/LocationServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/propertysys-property/src/main/java/com/propertysys/property/service/impl/PropertyServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/propertysys-property/src/main/java/com/propertysys/property/utils/JWTUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/propertysys-property/src/main/java/com/propertysys/property/utils/Result.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/propertysys-property/src/main/java/com/propertysys/property/utils/ResultCodeEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/propertysys-property/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/propertysys-property/src/main/resources/mapper/LocationMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/propertysys-property/src/main/resources/mapper/PropertyMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/propertysys-user/src/main/java/com/propertysys/user/model/UserRegisterRequest.java" afterDir="false" />
+    <list default="true" id="69358e5a-153d-4506-87ee-67878a60eed7" name="更改" comment="modify property related service">
+      <change afterPath="$PROJECT_DIR$/docs/property system.postman_collection.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/propertysys-property/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/propertysys-user/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/propertysys-property/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/propertysys-property/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/propertysys-user/src/main/java/com/propertysys/user/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/propertysys-user/src/main/java/com/propertysys/user/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/propertysys-user/src/main/java/com/propertysys/user/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/propertysys-user/src/main/java/com/propertysys/user/dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/propertysys-user/src/main/java/com/propertysys/user/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/propertysys-user/src/main/java/com/propertysys/user/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/propertysys-user/src/main/java/com/propertysys/user/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/propertysys-user/src/main/java/com/propertysys/user/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/propertysys-user/src/main/java/com/propertysys/user/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/propertysys-user/src/main/java/com/propertysys/user/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertysys-property/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/propertysys-property/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/propertysys-user/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/propertysys-user/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/propertysys-user/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/propertysys-user/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/propertysys-user/src/test/java/com/propertysys/user/service/UserServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/propertysys-user/src/test/java/com/propertysys/user/service/UserServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,11 +59,11 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "模块",
+    "project.structure.last.edited": "SDK",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.pluginManager",
-    "spring.configuration.checksum": "65c2659fd42c4d2b39c621761a432533",
+    "spring.configuration.checksum": "f81005a0869ad4ca790b53d7a3da198b",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -247,7 +225,10 @@
       <workItem from="1717701799202" duration="3875000" />
       <workItem from="1718690567021" duration="10813000" />
       <workItem from="1718787402562" duration="148000" />
-      <workItem from="1718787563214" duration="13808000" />
+      <workItem from="1718787563214" duration="14329000" />
+      <workItem from="1719038705834" duration="275000" />
+      <workItem from="1719039130522" duration="1961000" />
+      <workItem from="1719389413534" duration="7655000" />
     </task>
     <task id="LOCAL-00001" summary="modify user related interfaces">
       <created>1716595033531</created>
@@ -284,7 +265,14 @@
       <option name="project" value="LOCAL" />
       <updated>1717701843457</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="modify property related service">
+      <created>1719038447095</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1719038447095</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -307,7 +295,8 @@
     <MESSAGE value="modify project structure" />
     <MESSAGE value="modify role control" />
     <MESSAGE value="modify unit test of role and user module" />
-    <option name="LAST_COMMIT_MESSAGE" value="modify unit test of role and user module" />
+    <MESSAGE value="modify property related service" />
+    <option name="LAST_COMMIT_MESSAGE" value="modify property related service" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

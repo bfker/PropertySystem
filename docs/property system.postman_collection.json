@@ -1,0 +1,536 @@
+{
+	"info": {
+		"_postman_id": "83556c32-b684-42e4-b2f8-15e8bd08293f",
+		"name": "property system",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30816017",
+		"_collection_link": "https://gold-comet-186587.postman.co/workspace/My-Workspace~4836f9f7-d3b2-45b3-8ca2-61738ca0a9ec/collection/30816017-83556c32-b684-42e4-b2f8-15e8bd08293f?action=share&source=collection_link&creator=30816017"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "user/register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"testSeller\",\r\n    \"email\":\"testSeller@qq.com\",\r\n    \"password\":\"testSeller\",\r\n    \"roleID\": \"3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:8081/user/user/register",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8081",
+							"path": [
+								"user",
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user/login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"testSeller@qq.com\",\r\n    \"password\":\"testSeller\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:8081/user/user/login",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8081",
+							"path": [
+								"user",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user/logout/{userID}",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:8081/user/user/logout/6",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8081",
+							"path": [
+								"user",
+								"user",
+								"logout",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user/delete/{userID}",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:8081/user/user/delete/4",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8081",
+							"path": [
+								"user",
+								"user",
+								"delete",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user/userInfo/{userID}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "127.0.0.1:8081/user/user/userInfo/6",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8081",
+							"path": [
+								"user",
+								"user",
+								"userInfo",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user/update",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userID\": 6,\r\n    \"name\": \"testSeller\",\r\n    \"email\": \"testSeller@qq.com\",\r\n    \"password\": \"testSeller\",\r\n    \"profile\": \"http://example.com/testSeller.jpg\",\r\n    \"phone\": \"84573890\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:8081/user/user/update",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8081",
+							"path": [
+								"user",
+								"user",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "roles/add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"roleName\": \"Monitor\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:8081/user/roles/add",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8081",
+							"path": [
+								"user",
+								"roles",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "roles/all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "127.0.0.1:8081/user/roles/all",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8081",
+							"path": [
+								"user",
+								"roles",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "roles/{roleID}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "127.0.0.1:8081/user/roles/5",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8081",
+							"path": [
+								"user",
+								"roles",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "roles/delete/{roleID}",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "127.0.0.1:8081/user/roles/delete/6",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8081",
+							"path": [
+								"user",
+								"roles",
+								"delete",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Property",
+			"item": [
+				{
+					"name": "property/add/",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userID\": 6,\r\n  \"title\": \"Luxurious Apartment 2\",\r\n  \"price\": 2600000,\r\n  \"description\": \"An another luxurious apartment in the heart of the city.\",\r\n  \"postalCode\": \"123457\",\r\n  \"address\": \"123 Street Name\",\r\n  \"type\": \"HDB\",\r\n  \"size\": \"22000\",\r\n  \"location\": {\r\n    \"street\": \"123 Street Name\",\r\n    \"postalCode\": \"123457\",\r\n    \"latitude\": 1.4444,\r\n    \"longitude\": 123.5678\r\n  },\r\n  \"images\": [\r\n    \"http://example.com/image4.jpg\",\r\n    \"http://example.com/image5.jpg\",\r\n    \"http://example.com/image6.jpg\"\r\n  ],\r\n  \"video\": \"http://example.com/video.mp5\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:8082/property/property/add/",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8082",
+							"path": [
+								"property",
+								"property",
+								"add",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "property/update",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userID\": 1,\r\n  \"propertyID\": 1,\r\n  \"title\": \"Updated Title\",\r\n  \"price\": 2600000.00,\r\n  \"description\": \"Updated description\",\r\n  \"postalCode\": \"018956\",\r\n  \"address\": \"10 Bayfront Avenue\",\r\n  \"agentInfo\": \"Updated Agent Info\",\r\n  \"images\": [\r\n    \"http://example.com/properties/1/new_image1.jpg\",\r\n    \"http://example.com/properties/1/new_image2.jpg\",\r\n    \"http://example.com/properties/1/new_image3.jpg\"\r\n  ],\r\n  \"video\": \"http://example.com/properties/1/new_video.mp4\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:8082/property/property/update",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8082",
+							"path": [
+								"property",
+								"property",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "property/list/",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userID\": 6\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:8082/property/property/list/",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8082",
+							"path": [
+								"property",
+								"property",
+								"list",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "property/details/",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"propertyID\": 5\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:8082/property/property/details/",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8082",
+							"path": [
+								"property",
+								"property",
+								"details",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "property/interested",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userID\": 1\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:8082/property/property/interested",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8082",
+							"path": [
+								"property",
+								"property",
+								"interested"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "property/addInterest",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userID\": 1,\r\n  \"propertyID\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:8082/property/property/addInterest",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8082",
+							"path": [
+								"property",
+								"property",
+								"addInterest"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "property/removeInterest",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userID\": 1,\r\n  \"propertyID\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:8082/property/property/removeInterest",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8082",
+							"path": [
+								"property",
+								"property",
+								"removeInterest"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
