@@ -1,0 +1,94 @@
+trigger:
+  - main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  # Docker connection
+  DOCKER_REGISTRY_SERVICE_CONNECTION: 'dockerhub-connection'
+  DOCKER_REPOSITORY: 'bfker1999'
+  # Kubernetes connection
+  K8S_SERVICE_CONNECTION: 'k8s-connection'
+  BUILD_ID: $(Build.BuildId)
+
+stages:
+  - stage: Build
+    jobs:
+      - job: BuildUserService
+        displayName: "Build User Service"
+        steps:
+          - task: Maven@3
+            inputs:
+              mavenPomFile: 'propertysys-user/pom.xml'
+              goals: 'clean package'
+
+          - task: DockerInstaller@0
+            inputs:
+              dockerVersion: '17.09.0-ce'
+
+          - task: Docker@2
+            inputs:
+              containerRegistry: $(DOCKER_REGISTRY_SERVICE_CONNECTION)
+              repository: $(DOCKER_REPOSITORY)/propertysys-user
+              command: buildAndPush
+              Dockerfile: 'propertysys-user/Dockerfile'
+              tags: |
+                $(BUILD_ID)
+                latest
+
+      - job: BuildPropertyService
+        displayName: "Build Property Service"
+        steps:
+          - task: Maven@3
+            inputs:
+              mavenPomFile: 'propertysys-property/pom.xml'
+              goals: 'clean package'
+
+          - task: DockerInstaller@0
+            inputs:
+              dockerVersion: '17.09.0-ce'
+
+          - task: Docker@2
+            inputs:
+              containerRegistry: $(DOCKER_REGISTRY_SERVICE_CONNECTION)
+              repository: $(DOCKER_REPOSITORY)/propertysys-property
+              command: buildAndPush
+              Dockerfile: 'propertysys-property/Dockerfile'
+              tags: |
+                $(BUILD_ID)
+                latest
+
+  - stage: Deploy
+    jobs:
+      - deployment: DeployUserService
+        displayName: "Deploy User Service"
+        environment: 'development'
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - task: KubernetesManifest@0
+                  inputs:
+                    action: 'deploy'
+                    kubernetesServiceConnection: $(K8S_SERVICE_CONNECTION)
+                    namespace: 'default'
+                    manifests: |
+                      propertysys-user/eks-deploy-k8s.yaml
+                    containers: '$(DOCKER_REPOSITORY)/propertysys-user:$(BUILD_ID)'
+
+      - deployment: DeployPropertyService
+        displayName: "Deploy Property Service"
+        environment: 'development'
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - task: KubernetesManifest@0
+                  inputs:
+                    action: 'deploy'
+                    kubernetesServiceConnection: $(K8S_SERVICE_CONNECTION)
+                    namespace: 'default'
+                    manifests: |
+                      propertysys-property/eks-deploy-k8s.yaml
+                    containers: '$(DOCKER_REPOSITORY)/propertysys-property:$(BUILD_ID)'

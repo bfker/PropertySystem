@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: propertysys-user
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: propertysys-user
+  template:
+    metadata:
+      labels:
+        app: propertysys-user
+    spec:
+      containers:
+        - name: propertysys-user
+          image: bfker1999/propertysys-user:1.0
+          ports:
+            - containerPort: 8081
+          env:
+            - name: SPRING_DATASOURCE_URL
+              value: jdbc:mysql://property-mysql.mysql.database.azure.com:3306/pppp_dbs?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8
+            - name: SPRING_DATASOURCE_USERNAME
+              value: property_admin
+            - name: SPRING_DATASOURCE_PASSWORD
+              value: Passw@rd
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: propertysys-user
+spec:
+  selector:
+    app: propertysys-user
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8081
+  type: LoadBalancer
