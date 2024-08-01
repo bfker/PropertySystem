@@ -55,4 +55,12 @@
     <delete id="removeInterest" parameterType="map">
         DELETE FROM interest WHERE userID = #{userID} AND propertyID = #{propertyID} AND status = 'interest'
     </delete>
+
+    <select id="getAllProperties" resultType="com.propertysys.property.model.Property">
+        SELECT * FROM property
+    </select>
+
+    <select id="searchPropertiesByTitle" resultType="com.propertysys.property.model.Property">
+        SELECT * FROM property WHERE title LIKE #{title}
+    </select>
 </mapper>

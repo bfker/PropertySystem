@@ -121,4 +121,14 @@ public class PropertyServiceImpl implements PropertyService {
     public void removeInterest(int userID, int propertyID) {
         propertyDao.removeInterest(userID, propertyID);
     }
+
+    @Override
+    public List<Property> getAllProperties() {
+        return propertyDao.getAllProperties();
+    }
+
+    @Override
+    public List<Property> searchPropertiesByTitle(String title) {
+        return propertyDao.searchPropertiesByTitle("%" + title + "%");
+    }
 }

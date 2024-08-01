@@ -13,4 +13,6 @@ public interface PropertyService {
     void addInterest(int userID, int propertyID);
     List<Property> getInterestedProperties(int userID);
     void removeInterest(int userID, int propertyID);
+    List<Property> getAllProperties();
+    List<Property> searchPropertiesByTitle(String title);
 }

@@ -70,4 +70,18 @@ public class PropertyController {
         propertyService.removeInterest(userID, propertyID);
         return Result.success();
     }
+
+
+    @GetMapping("/all")
+    public Result<List<Property>> getAllProperties() {
+        List<Property> properties = propertyService.getAllProperties();
+        return Result.success(properties);
+    }
+
+    @PostMapping("/search")
+    public Result<List<Property>> searchPropertiesByTitle(@RequestBody Map<String, String> request) {
+        String title = request.get("title");
+        List<Property> properties = propertyService.searchPropertiesByTitle(title);
+        return Result.success(properties);
+    }
 }
