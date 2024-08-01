@@ -19,14 +19,28 @@
     </select>
 
     <update id="updateProperty" parameterType="com.propertysys.property.model.Property">
-        UPDATE property SET
-                            title = #{title},
-                            price = #{price},
-                            description = #{description},
-                            type = #{type},
-                            size = #{size}
+        UPDATE property
+        <set>
+            <if test="title != null and title != ''">
+                title = #{title},
+            </if>
+            <if test="price != null and price != ''">
+                price = #{price},
+            </if>
+            <if test="description != null and description != ''">
+                description = #{description},
+            </if>
+            <if test="type != null and type != ''">
+                type = #{type},
+            </if>
+            <if test="size != null and size != ''">
+                size = #{size},
+            </if>
+        </set>
         WHERE propertyID = #{propertyID} AND userID = #{userID}
     </update>
+
+
 
     <delete id="deleteProperty" parameterType="map">
         DELETE FROM property WHERE propertyID = #{propertyID} AND userID = #{userID}

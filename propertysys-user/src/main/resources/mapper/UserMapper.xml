@@ -43,7 +43,25 @@
     </insert>
 
     <update id="updateUser" parameterType="com.propertysys.user.model.User">
-        UPDATE user SET name = #{name}, email = #{email}, password = #{password}, profile = #{profile}, phone = #{phone} WHERE userID = #{userID}
+        UPDATE user
+        <set>
+            <if test="name != null and name != ''">
+                name = #{name},
+            </if>
+            <if test="email != null and email != ''">
+                email = #{email},
+            </if>
+            <if test="password != null and password != ''">
+                password = #{password},
+            </if>
+            <if test="phone != null and phone != ''">
+                phone = #{phone},
+            </if>
+            <if test="profile != null and profile != ''">
+                profile = #{profile},
+            </if>
+        </set>
+        WHERE userID = #{userID}
     </update>
 
 
