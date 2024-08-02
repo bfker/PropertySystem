@@ -1,35 +1,18 @@
+
 server:
   port: 8082
   servlet:
     context-path: /property
-spring:
-  application:
-    name: propertysys-property
-  datasource:
-        url: jdbc:mysql://localhost:3306/pppp_dbs?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8
-        username: root
-        password: root
-        driver-class-name: com.mysql.cj.jdbc.Driver
-#    url: jdbc:mysql://property-mysql.mysql.database.azure.com:3306/pppp_dbs?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8
-#    username: property_admin
-#    password: Passw@rd
-#    driver-class-name: com.mysql.cj.jdbc.Driver
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: true
-
-mybatis:
-  mapper-locations: classpath:/mapper/*.xml
-
-jwt:
-  SING: "pppp2024" #密钥
-  expireTime: 30 #token有效时间 (分钟)
 
 logging:
   level:
     root: INFO
     org.springframework.web: DEBUG
-  file:
-    path: /var/log/propertysys-property
+
+
+spring:
+  application:
+    name: propertysys-property
+  profiles:
+    active: dev
 

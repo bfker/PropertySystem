@@ -1,0 +1,34 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/pppp_dbs?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 50MB
+      max-request-size: 50MB
+
+mybatis:
+  mapper-locations: classpath:/mapper/*.xml
+
+jwt:
+  SING: "pppp2024" # 密钥
+  expireTime: 30 # token有效时间 (分钟)
+
+logging:
+  file:
+    path: D:/Coding/Project_backend/logs/propertysys-property
+
+file:
+  storage:
+    media-path: D:/Coding/Project_backend/propertysys-property/src/main/resources/static/media/
+  base-url:
+    media: http://localhost:8082/property/media/

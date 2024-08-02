@@ -12,7 +12,11 @@ public enum ResultCodeEnum {
     /*参数错误:1001-1999*/
     PARAMS_IS_INVALID(1001, "Params is Invalid"),
     PARAMS_IS_BLANK(1002, "Params is Blank"),
-    USER_IS_EXIST(1003,"User is Exist");
+    USER_IS_EXIST(1003,"User is Exist"),
+
+    /* 文件上传错误 */
+    FILE_UPLOAD_FAILED(2001, "File upload failed"),
+    FILE_IS_EMPTY(2002, "File is empty");
 
     ;
     private Integer code;
