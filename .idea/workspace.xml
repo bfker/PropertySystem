@@ -4,20 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="69358e5a-153d-4506-87ee-67878a60eed7" name="更改" comment="figure bug in update user and property info">
-      <change afterPath="$PROJECT_DIR$/propertysys-property/src/main/java/com/propertysys/property/config/WebMvcConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/propertysys-property/src/main/java/com/propertysys/property/controller/FileController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/propertysys-property/src/main/resources/application-dev.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/propertysys-property/src/main/resources/application-prod.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/propertysys-user/src/main/java/com/propertysys/user/config/WebMvcConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/propertysys-user/src/main/java/com/propertysys/user/controller/FileController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/propertysys-user/src/main/resources/application-dev.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/propertysys-user/src/main/resources/application-prod.yml" afterDir="false" />
+    <list default="true" id="69358e5a-153d-4506-87ee-67878a60eed7" name="更改" comment="figure bugs in file upload function">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/propertysys-property/src/main/java/com/propertysys/property/utils/ResultCodeEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/propertysys-property/src/main/java/com/propertysys/property/utils/ResultCodeEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/propertysys-property/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/propertysys-property/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/propertysys-user/src/main/java/com/propertysys/user/utils/ResultCodeEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/propertysys-user/src/main/java/com/propertysys/user/utils/ResultCodeEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/propertysys-user/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/propertysys-user/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertysys-property/src/main/java/com/propertysys/property/controller/PropertyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/propertysys-property/src/main/java/com/propertysys/property/controller/PropertyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertysys-property/src/main/java/com/propertysys/property/dao/PropertyDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/propertysys-property/src/main/java/com/propertysys/property/dao/PropertyDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertysys-property/src/main/java/com/propertysys/property/model/Property.java" beforeDir="false" afterPath="$PROJECT_DIR$/propertysys-property/src/main/java/com/propertysys/property/model/Property.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertysys-property/src/main/java/com/propertysys/property/service/PropertyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/propertysys-property/src/main/java/com/propertysys/property/service/PropertyService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertysys-property/src/main/java/com/propertysys/property/service/impl/PropertyServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/propertysys-property/src/main/java/com/propertysys/property/service/impl/PropertyServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertysys-property/src/main/resources/mapper/PropertyMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/propertysys-property/src/main/resources/mapper/PropertyMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,31 +45,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "jdk.selected.JAVA_MODULE": "17 (2)",
-    "last_opened_file_path": "D:/Coding/Project_backend/propertysys-property/src/main/resources/static",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "模块",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "spring.configuration.checksum": "f81005a0869ad4ca790b53d7a3da198b",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17 (2)&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Coding/Project_backend/propertysys-property/src/main/resources/static&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;f81005a0869ad4ca790b53d7a3da198b&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Coding\Project_backend\common" />
@@ -247,7 +241,8 @@
       <workItem from="1719652673986" duration="4022000" />
       <workItem from="1719734350141" duration="5692000" />
       <workItem from="1722501006311" duration="1862000" />
-      <workItem from="1722505427263" duration="21688000" />
+      <workItem from="1722505427263" duration="22233000" />
+      <workItem from="1722666314221" duration="3328000" />
     </task>
     <task id="LOCAL-00001" summary="modify user related interfaces">
       <created>1716595033531</created>
@@ -326,7 +321,14 @@
       <option name="project" value="LOCAL" />
       <updated>1722514562916</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="figure bugs in file upload function">
+      <created>1722602392998</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1722602392999</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -355,7 +357,8 @@
     <MESSAGE value="configure pipeline" />
     <MESSAGE value="add get all property and search property function" />
     <MESSAGE value="figure bug in update user and property info" />
-    <option name="LAST_COMMIT_MESSAGE" value="figure bug in update user and property info" />
+    <MESSAGE value="figure bugs in file upload function" />
+    <option name="LAST_COMMIT_MESSAGE" value="figure bugs in file upload function" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

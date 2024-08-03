@@ -123,12 +123,22 @@ public class PropertyServiceImpl implements PropertyService {
     }
 
     @Override
-    public List<Property> getAllProperties() {
-        return propertyDao.getAllProperties();
+    public List<Property> getAllProperties(int userID) {
+        List<Property> properties = propertyDao.getAllProperties();
+        for (Property property : properties) {
+            int count = propertyDao.getInterestStatus(userID, property.getPropertyID());
+            property.setInterested(count > 0);
+        }
+        return properties;
     }
 
     @Override
-    public List<Property> searchPropertiesByTitle(String title) {
-        return propertyDao.searchPropertiesByTitle("%" + title + "%");
+    public List<Property> searchPropertiesByTitle(String title, int userID) {
+        List<Property> properties = propertyDao.searchPropertiesByTitle("%" + title + "%");
+        for (Property property : properties) {
+            int count = propertyDao.getInterestStatus(userID, property.getPropertyID());
+            property.setInterested(count > 0);
+        }
+        return properties;
     }
 }

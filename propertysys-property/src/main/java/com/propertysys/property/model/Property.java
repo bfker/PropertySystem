@@ -18,4 +18,16 @@ public class Property {
     private String video;
     private Location location;
     private List<Media> mediaList;
+
+    // 添加这个字段
+    private boolean isInterested;
+
+    // Getters and Setters
+    public boolean isInterested() {
+        return isInterested;
+    }
+
+    public void setInterested(boolean interested) {
+        isInterested = interested;
+    }
 }

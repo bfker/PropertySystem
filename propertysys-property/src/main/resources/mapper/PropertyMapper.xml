@@ -77,4 +77,8 @@
     <select id="searchPropertiesByTitle" resultType="com.propertysys.property.model.Property">
         SELECT * FROM property WHERE title LIKE #{title}
     </select>
+
+    <select id="getInterestStatus" resultType="int">
+        SELECT COUNT(*) FROM interest WHERE userID = #{userID} AND propertyID = #{propertyID} AND status = 'interest'
+    </select>
 </mapper>

@@ -23,4 +23,6 @@ public interface PropertyDao {
     List<Property> getAllProperties();
 
     List<Property> searchPropertiesByTitle(String title);
+
+    Integer getInterestStatus(int userID, int propertyID);
 }

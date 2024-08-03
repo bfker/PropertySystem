@@ -72,16 +72,18 @@ public class PropertyController {
     }
 
 
-    @GetMapping("/all")
-    public Result<List<Property>> getAllProperties() {
-        List<Property> properties = propertyService.getAllProperties();
+    @PostMapping("/all")
+    public Result<List<Property>> getAllProperties(@RequestBody Map<String, Integer> request) {
+        int userID = request.get("userID");
+        List<Property> properties = propertyService.getAllProperties(userID);
         return Result.success(properties);
     }
 
     @PostMapping("/search")
-    public Result<List<Property>> searchPropertiesByTitle(@RequestBody Map<String, String> request) {
-        String title = request.get("title");
-        List<Property> properties = propertyService.searchPropertiesByTitle(title);
+    public Result<List<Property>> searchPropertiesByTitle(@RequestBody Map<String, Object> request) {
+        String title = (String) request.get("title");
+        int userID = (int) request.get("userID");
+        List<Property> properties = propertyService.searchPropertiesByTitle(title, userID);
         return Result.success(properties);
     }
 }
