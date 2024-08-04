@@ -42,11 +42,14 @@ public class PropertyController {
         return Result.success(property);
     }
 
-    @DeleteMapping("/delete")
-    public Result<Void> deleteProperty(@RequestParam int propertyID, @RequestParam int userID) {
+    @PostMapping("/delete")
+    public Result<Void> deleteProperty(@RequestBody Map<String, Integer> request) {
+        int propertyID = request.get("propertyID");
+        int userID = request.get("userID");
         propertyService.deleteProperty(propertyID, userID);
         return Result.success();
     }
+
 
     @PostMapping("/addInterest")
     public Result<Void> addInterest(@RequestBody Map<String, Integer> request) {

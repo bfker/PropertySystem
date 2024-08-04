@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="69358e5a-153d-4506-87ee-67878a60eed7" name="更改" comment="figure bugs in file upload function">
+    <list default="true" id="69358e5a-153d-4506-87ee-67878a60eed7" name="更改" comment="now the result of property search include interest">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/propertysys-property/src/main/java/com/propertysys/property/controller/PropertyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/propertysys-property/src/main/java/com/propertysys/property/controller/PropertyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/propertysys-property/src/main/java/com/propertysys/property/dao/PropertyDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/propertysys-property/src/main/java/com/propertysys/property/dao/PropertyDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/propertysys-property/src/main/java/com/propertysys/property/model/Property.java" beforeDir="false" afterPath="$PROJECT_DIR$/propertysys-property/src/main/java/com/propertysys/property/model/Property.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/propertysys-property/src/main/java/com/propertysys/property/service/PropertyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/propertysys-property/src/main/java/com/propertysys/property/service/PropertyService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/propertysys-property/src/main/java/com/propertysys/property/service/impl/PropertyServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/propertysys-property/src/main/java/com/propertysys/property/service/impl/PropertyServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/propertysys-property/src/main/resources/mapper/PropertyMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/propertysys-property/src/main/resources/mapper/PropertyMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -242,7 +237,7 @@
       <workItem from="1719734350141" duration="5692000" />
       <workItem from="1722501006311" duration="1862000" />
       <workItem from="1722505427263" duration="22233000" />
-      <workItem from="1722666314221" duration="3328000" />
+      <workItem from="1722666314221" duration="5394000" />
     </task>
     <task id="LOCAL-00001" summary="modify user related interfaces">
       <created>1716595033531</created>
@@ -328,7 +323,14 @@
       <option name="project" value="LOCAL" />
       <updated>1722602392999</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="now the result of property search include interest">
+      <created>1722682986130</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1722682986130</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -358,7 +360,8 @@
     <MESSAGE value="add get all property and search property function" />
     <MESSAGE value="figure bug in update user and property info" />
     <MESSAGE value="figure bugs in file upload function" />
-    <option name="LAST_COMMIT_MESSAGE" value="figure bugs in file upload function" />
+    <MESSAGE value="now the result of property search include interest" />
+    <option name="LAST_COMMIT_MESSAGE" value="now the result of property search include interest" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
