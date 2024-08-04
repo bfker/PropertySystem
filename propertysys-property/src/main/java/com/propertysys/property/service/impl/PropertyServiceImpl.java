@@ -128,6 +128,10 @@ public class PropertyServiceImpl implements PropertyService {
         for (Property property : properties) {
             int count = propertyDao.getInterestStatus(userID, property.getPropertyID());
             property.setInterested(count > 0);
+
+            // 加载对应的Media
+            List<Media> mediaList = propertyDao.getMediaByPropertyId(property.getPropertyID());
+            property.setMediaList(mediaList);
         }
         return properties;
     }
@@ -138,7 +142,12 @@ public class PropertyServiceImpl implements PropertyService {
         for (Property property : properties) {
             int count = propertyDao.getInterestStatus(userID, property.getPropertyID());
             property.setInterested(count > 0);
+
+            // 加载对应的Media
+            List<Media> mediaList = propertyDao.getMediaByPropertyId(property.getPropertyID());
+            property.setMediaList(mediaList);
         }
         return properties;
     }
+
 }
