@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="69358e5a-153d-4506-87ee-67878a60eed7" name="更改" comment="modify response of search for property">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="69358e5a-153d-4506-87ee-67878a60eed7" name="更改" comment="fix bug in get interested property">
       <change beforePath="$PROJECT_DIR$/propertysys-property/src/main/java/com/propertysys/property/service/impl/PropertyServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/propertysys-property/src/main/java/com/propertysys/property/service/impl/PropertyServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -237,7 +236,7 @@
       <workItem from="1719734350141" duration="5692000" />
       <workItem from="1722501006311" duration="1862000" />
       <workItem from="1722505427263" duration="22233000" />
-      <workItem from="1722666314221" duration="7390000" />
+      <workItem from="1722666314221" duration="8223000" />
     </task>
     <task id="LOCAL-00001" summary="modify user related interfaces">
       <created>1716595033531</created>
@@ -344,7 +343,14 @@
       <option name="project" value="LOCAL" />
       <updated>1722787460870</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="fix bug in get interested property">
+      <created>1722832049152</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1722832049152</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -377,7 +383,8 @@
     <MESSAGE value="now the result of property search include interest" />
     <MESSAGE value="modify property delete method" />
     <MESSAGE value="modify response of search for property" />
-    <option name="LAST_COMMIT_MESSAGE" value="modify response of search for property" />
+    <MESSAGE value="fix bug in get interested property" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix bug in get interested property" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

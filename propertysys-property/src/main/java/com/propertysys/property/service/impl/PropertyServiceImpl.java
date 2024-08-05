@@ -101,6 +101,8 @@ public class PropertyServiceImpl implements PropertyService {
     @Override
     @Transactional
     public void deleteProperty(int propertyID, int userID) {
+        propertyDao.deleteInterestsByPropertyId(propertyID);
+
         propertyDao.deleteMediaByPropertyId(propertyID);
         propertyDao.deleteProperty(propertyID, userID);
     }

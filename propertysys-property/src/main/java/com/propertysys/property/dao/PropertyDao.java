@@ -25,4 +25,6 @@ public interface PropertyDao {
     List<Property> searchPropertiesByTitle(String title);
 
     Integer getInterestStatus(int userID, int propertyID);
+
+    void deleteInterestsByPropertyId(int propertyID);
 }
