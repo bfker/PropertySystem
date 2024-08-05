@@ -113,7 +113,13 @@ public class PropertyServiceImpl implements PropertyService {
 
     @Override
     public List<Property> getInterestedProperties(int userID) {
-        return propertyDao.getInterestedProperties(userID);
+        List<Property> properties = propertyDao.getInterestedProperties(userID);
+        for (Property property : properties) {
+            // 加载对应的Media
+            List<Media> mediaList = propertyDao.getMediaByPropertyId(property.getPropertyID());
+            property.setMediaList(mediaList);
+        }
+        return properties;
     }
 
     @Override
